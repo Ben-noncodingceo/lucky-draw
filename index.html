@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转盘抽奖系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区 -->
+        <header class="header">
+            <h1>转盘抽奖系统</h1>
+        </header>
+
+        <!-- 配置区 -->
+        <section class="config-area">
+            <div class="config-item prize-config">
+                <label for="prizeInput">奖品列表（每行一个）</label>
+                <textarea id="prizeInput" placeholder="请输入奖品名称"></textarea>
+            </div>
+            <div class="config-item rate-config">
+                <label for="rateInput">抽奖成功率（%）</label>
+                <input type="number" id="rateInput" min="0" max="100" value="50">
+                <div id="rateError" class="error-tip">请输入 0-100 的有效数字</div>
+            </div>
+        </section>
+
+        <!-- 转盘展示区 -->
+        <section class="turntable-area">
+            <div class="turntable-container">
+                <div class="turntable" id="turntable">
+                    <!-- 分区和文字将通过JS动态生成 -->
+                </div>
+                <div class="pointer"></div>
+            </div>
+        </section>
+
+        <!-- 操作区 -->
+        <section class="control-area">
+            <button id="startBtn" class="btn primary">开始抽奖</button>
+            <button id="resetBtn" class="btn secondary">重置配置</button>
+        </section>
+
+        <!-- 结果展示区 -->
+        <section class="result-area">
+            <div id="resultText"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
